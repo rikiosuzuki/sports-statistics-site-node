@@ -36,6 +36,6 @@ app.listen(process.env.PORT || 4000);
 app.use(express.json());
 
 
-const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/project'
+const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/sportsWeb'
 console.log(CONNECTION_STRING);
 mongoose.connect(CONNECTION_STRING);
