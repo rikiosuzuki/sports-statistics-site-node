@@ -2,6 +2,7 @@ import * as dao from "./dao.js";
 
 function UserRoutes(app) {
   const createPost = async (req, res) => {
+    console.log("creating posts");
     const post = await dao.createPost(req.body);
     res.json(post);
   };
@@ -22,12 +23,6 @@ function UserRoutes(app) {
     const status = await dao.deletePost(req.params.postId);
     res.json(status);
   };
-
-  app.post("/api/posts", createPost);
-  app.get("/api/posts", findAllPosts);
-  app.get("/api/posts/:postId", findPostById);
-  app.put("/api/posts/:postId", updatePost);
-  app.delete("/api/posts/:postId", deletePost);
 
   const createUser = async (req, res) => {
     const user = await dao.createUser(req.body);
@@ -89,5 +84,12 @@ function UserRoutes(app) {
   app.post("/api/users/signin", signin);
   app.post("/api/users/signout", signout);
   app.post("/api/users/account", account);
+
+
+  app.post("/api/posts", createPost);
+  app.get("/api/posts", findAllPosts);
+  app.get("/api/posts/:postId", findPostById);
+  app.put("/api/posts/:postId", updatePost);
+  app.delete("/api/posts/:postId", deletePost);
 }
 export default UserRoutes;
