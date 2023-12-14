@@ -20,6 +20,7 @@ function UserRoutes(app) {
     res.json(status);
   };
   const deletePost = async (req, res) => {
+    console.log("deleting posts in server");
     const status = await dao.deletePost(req.params.postId);
     res.json(status);
   };
