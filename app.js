@@ -11,7 +11,7 @@ const app = express();
 app.use(
     cors({
         credentials: true,
-        origin: process.env.FRONTEND_URL,
+        origin: 'https://rococo-elf-71a16a.netlify.app/',
     })
 );
 const sessionOptions = {
