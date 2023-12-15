@@ -1,6 +1,6 @@
 import express from 'express';
 import mongoose from "mongoose";
-import UserRoutes from "./users/routes.js";
+import UserRoutes from "./Users/routes.js";
 import session from "express-session";
 import cors from "cors";
 import "dotenv/config";
