@@ -9,19 +9,19 @@ export const findUserByUsername = async (username) => {
     return user;
   } catch (err) {
     console.error(err);
-    throw err; 
+    throw err;
   }
 };
 
 export const findUserByCredentials = (username, password) =>
-  userModel.findOne({ username, password });
+    userModel.findOne({ username, password });
 export const updateUser = (userId, user) =>
-  userModel.updateOne({ _id: userId }, { $set: user });
+    userModel.updateOne({ _id: userId }, { $set: user });
 export const deleteUser = (userId) => userModel.deleteOne({ _id: userId });
 
 export const createPost = (post) => postModel.create(post);
 export const findAllPosts = () => postModel.find();
 export const findPostById = (postId) => postModel.findById(postId);
 export const updatePost = (postId, post) =>
-  postModel.updateOne({ _id: postId }, { $set: post });
+    postModel.updateOne({ _id: postId }, { $set: post });
 export const deletePost = (postId) => postModel.deleteOne({ _id: postId });
